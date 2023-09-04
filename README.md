@@ -1,5 +1,5 @@
 # RTL_to_GDS_of_ALU
-## synthesis
+## Synthesis
 
 ![image](https://github.com/Sourav365/RTL_to_GDS_of_ALU/assets/49667585/b06f9908-307d-45e0-82b3-451868d9f133)
 
