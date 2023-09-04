@@ -15,6 +15,10 @@
 ## Placement & Routing
 
 ### 1. start
+  1. Verilog File
+  2. Technology LEF file
+  3. IO pad file
+  4. MMMC analysis file
 
   ![image](https://github.com/Sourav365/RTL_to_GDS_of_ALU/assets/49667585/a116c3d2-fd24-4a3b-a66f-0eab05907c00)
 
