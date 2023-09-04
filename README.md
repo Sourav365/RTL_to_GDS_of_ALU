@@ -30,17 +30,24 @@ Routing
 Add Well-taps, End Caps, Filler cells, IO Fillers
 
 Endcap
+
 ![image](https://github.com/Sourav365/RTL_to_GDS_of_ALU/assets/49667585/f0a31c20-f192-4be1-af12-96f475601a39)
 
 Well-tap
+
 ![image](https://github.com/Sourav365/RTL_to_GDS_of_ALU/assets/49667585/2612f3b6-5ed8-48fb-84d2-1886521b7b97)
 
 Core Filler
+
 ![image](https://github.com/Sourav365/RTL_to_GDS_of_ALU/assets/49667585/25ecf020-ca55-40e6-90e1-fbcd24331ff0)
 
 IO Filler
+
 ![image](https://github.com/Sourav365/RTL_to_GDS_of_ALU/assets/49667585/11882e52-eba0-428a-9b55-502e94381191)
 
+Final Result 
+
+![image](https://github.com/Sourav365/RTL_to_GDS_of_ALU/assets/49667585/830b730f-4ccf-49c6-a37e-5213c93899ab)
 
 
 
