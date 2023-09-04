@@ -78,5 +78,3 @@ GDSII (Graphic Data Stream) Generation
 ![image](https://github.com/Sourav365/RTL_to_GDS_of_ALU/assets/49667585/ed42080d-1259-405f-a3b6-f3a86c3f11f2)
 
 
-
-
