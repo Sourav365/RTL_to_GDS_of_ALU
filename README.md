@@ -1,34 +1,56 @@
 # RTL_to_GDS_of_ALU
-synthesis
+## synthesis
+
+![image](https://github.com/Sourav365/RTL_to_GDS_of_ALU/assets/49667585/b06f9908-307d-45e0-82b3-451868d9f133)
 
 ![image](https://github.com/Sourav365/RTL_to_GDS_of_ALU/assets/49667585/14e78973-0513-45c3-a420-c684e8a21a24)
 
-Synthesis Report
+### Synthesis Report
 
 * Total number of std cells = 207
 * Total Area = 3381.034 μm^2
 * Timing slack = 5983ps
 * Critical path => clk --> from A[1] to flag_zero_reg/D
 
-start
+## Placement & Routing
 
-![image](https://github.com/Sourav365/RTL_to_GDS_of_ALU/assets/49667585/d424621e-1470-40fd-b288-6e4652ca9115)
+### 1. start
 
-Power Ring
+  ![image](https://github.com/Sourav365/RTL_to_GDS_of_ALU/assets/49667585/a116c3d2-fd24-4a3b-a66f-0eab05907c00)
 
-![image](https://github.com/Sourav365/RTL_to_GDS_of_ALU/assets/49667585/fd3e7506-b169-44bd-bf67-9fd278bc143a)
+### 2. Floorplan
+  1. Specify floorplan (Core, IO size)
+  2. Row spacing.
+  3. Place Hard MACROs (IP)
+  4. Define Fence for a module/block --> Optional
+  5. Place Blockage (Don't place anything) & Halos (Don't place anything outside Macros)
+     
 
-Power Strip
+  ![image](https://github.com/Sourav365/RTL_to_GDS_of_ALU/assets/49667585/beb963b2-38f9-4fe8-8878-83a12303bdee)
 
-![image](https://github.com/Sourav365/RTL_to_GDS_of_ALU/assets/49667585/cd6ef3ef-69bf-43b0-b96e-4daaec27c3ba)
+  ![image](https://github.com/Sourav365/RTL_to_GDS_of_ALU/assets/49667585/d424621e-1470-40fd-b288-6e4652ca9115)
 
-Place std cell
+### 3. Power Planning
+  1. Define Global power nets (VDD, VDDO, GND, GNDO)
+  2. Create Power Ring for each metal layers
+  3. Create Power Strip for each metal layers
+  4. Connect Global nets with I/P Power pins
 
-![image](https://github.com/Sourav365/RTL_to_GDS_of_ALU/assets/49667585/4d81c402-a4d0-47bf-9989-82d7846a309e)
+  ![image](https://github.com/Sourav365/RTL_to_GDS_of_ALU/assets/49667585/fd3e7506-b169-44bd-bf67-9fd278bc143a)
 
-CTS & Post CTS report
 
-![image](https://github.com/Sourav365/RTL_to_GDS_of_ALU/assets/49667585/543bba3c-1e3b-4d20-b2f4-26ec8c4fc9fd)
+  ![image](https://github.com/Sourav365/RTL_to_GDS_of_ALU/assets/49667585/cd6ef3ef-69bf-43b0-b96e-4daaec27c3ba)
+
+### 4. Placement of Standard Cells
+  1. Global Placement
+  2. Detailed Placement
+  3. Pre CTS (timing based) optimization of placement (Only Hold time)
+
+  ![image](https://github.com/Sourav365/RTL_to_GDS_of_ALU/assets/49667585/4d81c402-a4d0-47bf-9989-82d7846a309e)
+
+### 5. CTS & Post CTS report (Both Setup & Hold time check)
+
+  ![image](https://github.com/Sourav365/RTL_to_GDS_of_ALU/assets/49667585/543bba3c-1e3b-4d20-b2f4-26ec8c4fc9fd)
 
 Routing
 
@@ -71,6 +93,7 @@ Antenna Issue Check
 Min Metal density check
 
 ![image](https://github.com/Sourav365/RTL_to_GDS_of_ALU/assets/49667585/15efaaec-6da9-4984-8ce9-b8b859bfaadb)
+
 Some errors due to small core with more IOs. Filler cells are not connected through metals!
 
 GDSII (Graphic Data Stream) Generation
