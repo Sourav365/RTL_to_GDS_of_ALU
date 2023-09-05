@@ -14,7 +14,7 @@
 
 ## Placement & Routing
 
-### 1. start
+### 1. Start
   1. Verilog File
   2. Technology LEF file
   3. IO pad file
