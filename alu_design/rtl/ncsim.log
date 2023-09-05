@@ -1,0 +1,22 @@
+ncsim: 15.20-s050: (c) Copyright 1995-2018 Cadence Design Systems, Inc.
+
+-------------------------------------
+Relinquished control to SimVision...
+ncsim> 
+ncsim> database -open waves -into waves.shm -default
+Created default SHM database waves
+ncsim> probe -create -shm test_alu.A test_alu.B test_alu.clk test_alu.en test_alu.flag_carry test_alu.flag_zero test_alu.op_code test_alu.result_out
+Created probe 1
+ncsim> run
+Simulation complete via $finish(1) at time 53 NS + 0
+./test_alu.v:38        #10; $finish;
+ncsim> run
+ncsim: *E,RNFNSH: Cannot continue simulation due to a previous $finish.
+ncsim> run
+ncsim: *E,RNFNSH: Cannot continue simulation due to a previous $finish.
+ncsim> run
+ncsim: *E,RNFNSH: Cannot continue simulation due to a previous $finish.
+ncsim> ^C
+ncsim> exit
+ncsim: Memory Usage - 32.2M program + 22.8M data = 55.0M total (59.1M Peak)
+ncsim: CPU Usage - 8.2s system + 2.9s user = 11.1s total (463.9s, 2.4% cpu)
