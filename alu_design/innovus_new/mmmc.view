@@ -1,0 +1,10 @@
+# Version:1.0 MMMC View Definition File
+# Do Not Remove Above Line
+create_library_set -name best_case -timing {../lib/fsa0m_a_generic_core_ff1p98vm40c.lib}
+create_library_set -name worst_case -timing {../lib/fsa0m_a_generic_core_ss1p62v125c.lib}
+create_constraint_mode -name const -sdc_files {alu_synthesys_report.sdc}
+create_delay_corner -name best_case -library_set {best_case}
+create_delay_corner -name worst_case -library_set {worst_case}
+create_analysis_view -name hold -constraint_mode {const} -delay_corner {best_case}
+create_analysis_view -name setup -constraint_mode {const} -delay_corner {worst_case}
+set_analysis_view -setup {setup} -hold {hold}
