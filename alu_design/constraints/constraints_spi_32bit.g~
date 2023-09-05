@@ -1,0 +1,111 @@
+
+# Set the current design
+current_design ser_in_par_out
+set_case_analysis 0 [get_ports test_mode]
+set_case_analysis 0 [get_ports scan_en]
+
+create_clock -name clk -period 40 -waveform {0 20} [get_ports "clk"]
+
+set_clock_transition -rise 0.2 [get_clocks "clk"]
+
+set_clock_transition -fall 0.2 [get_clocks "clk"]
+
+set_clock_uncertainty 0.01 [get_ports "clk"]
+
+
+set_input_delay -max 1.0 [get_ports "serial_data_in"] -clock [get_clocks "clk"]
+
+set_input_delay -max 1.0 [get_ports "reset_n"] -clock [get_clocks "clk"]
+
+set_input_delay -max 1.0 [get_ports "parity_enable"] -clock [get_clocks "clk"]
+
+set_input_delay -max 1.0 [get_ports "parity_phase"] -clock [get_clocks "clk"]
+
+set_input_delay -max 1.0 [get_ports "read"] -clock [get_clocks "clk"]
+
+set_output_delay -max 1.0 [get_ports "parallel_data_out"] -clock [get_clocks "clk"]
+
+set_output_delay -max 1.0 [get_ports "parity_error"] -clock [get_clocks "clk"]
+
+set_output_delay -max 1.0 [get_ports "rx_error"] -clock [get_clocks "clk"]
+
+set_output_delay -max 1.0 [get_ports "rxdv"] -clock [get_clocks "clk"]
+
+set_attribute congestion_effort medium
+
+set_attribute delete_unloaded_seqs true
+
+set_attribute tns_opto true
+
+set_attribute drc_first true
+
+set_attribute drc_max_cap_first true
+
+set_attribute drc_max_fanout_first true
+
+set_attribute drc_max_trans_first true
+
+set_attribute fix_min_drcs true
+
+set_attribute map_drc_first true
+
+set_attribute override_library_max_drc true
+
+#set_attribute ignore_library_drc true
+
+#set_attribute ignore_library_max_fanout true
+
+#set_attribute max_capacitance {no_value | float}
+
+#set_attribute max_fanout {no_value | float}
+
+#set_attribute max_transition {no_value | float}
+
+set_attribute fixed_slew 0.0 serial_data_in
+
+set_attribute fixed_slew 0.0 reset_n
+
+set_attribute fixed_slew 0.0 read 
+
+set_attribute fixed_slew 0.0 parity_phase 
+
+set_attribute fixed_slew 0.0 parity_enable 
+
+set_attribute external_pin_cap 0.0 rx_error
+
+set_attribute external_pin_cap 0.0 rxdv
+
+set_attribute external_pin_cap 0.0 parity_error
+
+set_attribute external_pin_cap 0.0 parallel_data_out[31]
+set_attribute external_pin_cap 0.0 parallel_data_out[30]
+set_attribute external_pin_cap 0.0 parallel_data_out[29]
+set_attribute external_pin_cap 0.0 parallel_data_out[28]
+set_attribute external_pin_cap 0.0 parallel_data_out[27]
+set_attribute external_pin_cap 0.0 parallel_data_out[26]
+set_attribute external_pin_cap 0.0 parallel_data_out[25]
+set_attribute external_pin_cap 0.0 parallel_data_out[24]
+set_attribute external_pin_cap 0.0 parallel_data_out[23]
+set_attribute external_pin_cap 0.0 parallel_data_out[22]
+set_attribute external_pin_cap 0.0 parallel_data_out[21]
+set_attribute external_pin_cap 0.0 parallel_data_out[20]
+set_attribute external_pin_cap 0.0 parallel_data_out[19]
+set_attribute external_pin_cap 0.0 parallel_data_out[18]
+set_attribute external_pin_cap 0.0 parallel_data_out[17]
+set_attribute external_pin_cap 0.0 parallel_data_out[16]
+set_attribute external_pin_cap 0.0 parallel_data_out[15]
+set_attribute external_pin_cap 0.0 parallel_data_out[14]
+set_attribute external_pin_cap 0.0 parallel_data_out[13]
+set_attribute external_pin_cap 0.0 parallel_data_out[12]
+set_attribute external_pin_cap 0.0 parallel_data_out[11]
+set_attribute external_pin_cap 0.0 parallel_data_out[10]
+set_attribute external_pin_cap 0.0 parallel_data_out[9]
+set_attribute external_pin_cap 0.0 parallel_data_out[8]
+set_attribute external_pin_cap 0.0 parallel_data_out[7]
+set_attribute external_pin_cap 0.0 parallel_data_out[6]
+set_attribute external_pin_cap 0.0 parallel_data_out[5]
+set_attribute external_pin_cap 0.0 parallel_data_out[4]
+set_attribute external_pin_cap 0.0 parallel_data_out[3]
+set_attribute external_pin_cap 0.0 parallel_data_out[2]
+set_attribute external_pin_cap 0.0 parallel_data_out[1]
+set_attribute external_pin_cap 0.0 parallel_data_out[0]

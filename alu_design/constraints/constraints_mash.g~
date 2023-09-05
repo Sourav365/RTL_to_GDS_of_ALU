@@ -1,0 +1,35 @@
+create_clock -name fbclk -period 40 -waveform {0 20} [get_ports "fbclk"]
+
+set_clock_transition -rise 0.02 [get_clocks "fbclk"]
+
+set_clock_transition -fall 0.02 [get_clocks "fbclk"]
+
+set_clock_uncertainty 0.0001 [get_ports "fbclk"]
+
+set_input_delay -max 1.0 [get_ports "fbclk_rst_n"] -clock [get_clocks "fbclk"]
+
+set_input_delay -max 1.0 [get_ports "D"] -clock [get_clocks "fbclk"]
+
+set_input_delay -max 1.0 [get_ports "dF"] -clock [get_clocks "fbclk"]
+
+set_input_delay -max 1.0 [get_ports "SdmCtl"] -clock [get_clocks "fbclk"]
+
+set_input_delay -max 1.0 [get_ports "reg_pll_cfg"] -clock [get_clocks "fbclk"]
+
+set_input_delay -max 1.0 [get_ports "ext_deltaN"] -clock [get_clocks "fbclk"]
+
+set_input_delay -max 1.0 [get_ports "scan_mode"] -clock [get_clocks "fbclk"]
+
+set_input_delay -max 1.0 [get_ports "fbclk_rst_n"] -clock [get_clocks "fbclk"]
+
+set_output_delay -max 1.0 [get_ports "sdm_pll_cfg"] -clock [get_clocks "fbclk"]
+
+set_output_delay -max 1.0 [get_ports "extra_ctl"] -clock [get_clocks "fbclk"]
+
+
+set_attribute congestion_effort medium
+
+set_attribute delete_unloaded_seqs true
+
+set_attribute tns_opto true
+

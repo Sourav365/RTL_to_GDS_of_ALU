@@ -1,0 +1,70 @@
+
+current_design linearsearch_AFC_version_4
+
+create_clock -name clk -period 40 -waveform {0 20} [get_ports "clkv"]
+#create_clock -name clk -period 40 -waveform {0 20} [get_ports "clkv"]
+
+#create_clock -name clk -period 0.3 -waveform {0 0.15} [get_ports "clk"]
+
+set_clock_transition -rise 0.01 [get_clocks "clkv"]
+
+set_clock_transition -fall 0.01 [get_clocks "clkv"]
+
+set_clock_uncertainty 0.1 [get_ports "clkv"]
+
+set_attribute congestion_effort medium
+
+set_attribute delete_unloaded_seqs true
+
+set_attribute tns_opto true
+
+set_db drc_first true
+
+set_attribute external_pin_cap 0.0 ENABLE
+
+set_attribute external_pin_cap 0.0 AFC_OFF
+
+set_attribute external_pin_cap 0.0 rst
+
+set_attribute external_pin_cap 0.0 ref_rst
+
+set_attribute external_pin_cap 0.0 ref_out[0]
+set_attribute external_pin_cap 0.0 ref_out[1]
+set_attribute external_pin_cap 0.0 ref_out[2]
+set_attribute external_pin_cap 0.0 ref_out[3]
+set_attribute external_pin_cap 0.0 ref_out[4]
+set_attribute external_pin_cap 0.0 ref_out[5]
+set_attribute external_pin_cap 0.0 ref_out[6]
+set_attribute external_pin_cap 0.0 ref_out[7]
+set_attribute external_pin_cap 0.0 ref_out[8]
+set_attribute external_pin_cap 0.0 vco_cont[0]
+set_attribute external_pin_cap 0.0 vco_cont[1]
+set_attribute external_pin_cap 0.0 vco_cont[2]
+set_attribute external_pin_cap 0.0 vco_cont[3]
+set_attribute external_pin_cap 0.0 vco_cont[4]
+set_attribute external_pin_cap 0.0 x[0]
+set_attribute external_pin_cap 0.0 x[1]
+set_attribute external_pin_cap 0.0 x[2]
+set_attribute external_pin_cap 0.0 x[3]
+set_attribute external_pin_cap 0.0 x[4]
+set_attribute external_pin_cap 0.0 x[5]
+set_attribute external_pin_cap 0.0 x[6]
+set_attribute external_pin_cap 0.0 x[7]
+set_attribute external_pin_cap 0.0 x[8]
+set_attribute external_pin_cap 0.0 ref_enable
+
+set_attribute fixed_slew 0.0 D_in[0]
+set_attribute fixed_slew 0.0 D_in[1]
+set_attribute fixed_slew 0.0 D_in[2]
+set_attribute fixed_slew 0.0 D_in[3]
+set_attribute fixed_slew 0.0 D_in[4]
+set_attribute fixed_slew 0.0 D_in[5]
+set_attribute fixed_slew 0.0 D_in[6]
+set_attribute fixed_slew 0.0 D_in[7]
+set_attribute fixed_slew 0.0 D_in[8]
+set_attribute fixed_slew 0.0 clk
+set_attribute fixed_slew 0.0 ResetN
+
+set_attribute external_delay -output 1.0 -clock [find / -clock clkv] \ [find / -port ENABLE]
+
+
