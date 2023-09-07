@@ -12,6 +12,9 @@
 * Timing slack = 5983ps
 * Critical path => clk --> from A[1] to flag_zero_reg/D
 
+### PNR Report
+* Total number of std cells = 2071 (Due to fillers)
+  
 ## Placement & Routing
 
 ### 1. Start
